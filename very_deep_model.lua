@@ -27,10 +27,6 @@ function very_deep_model() -- validate.lua Acc: 0.924
    model:add(nn.ReLU())
    model:add(ccn2.SpatialConvolution(32, 32, 3, 1, 1))
    model:add(nn.ReLU())
-   model:add(ccn2.SpatialConvolution(32, 32, 3, 1, 1))
-   model:add(nn.ReLU())
-   model:add(ccn2.SpatialConvolution(32, 32, 3, 1, 1))
-   model:add(nn.ReLU())
    model:add(ccn2.SpatialMaxPooling(2, 2))
    model:add(nn.Dropout(0.25))
    
