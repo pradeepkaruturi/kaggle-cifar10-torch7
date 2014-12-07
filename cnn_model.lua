@@ -9,6 +9,9 @@ function cnn_model() -- validate.lua Acc: 0.88
    model:add(nn.ReLU())
    model:add(nn.SpatialMaxPooling(2, 2, 2, 2))
    
+   model:add(nn.SpatialConvolutionMM(16, 16, 5, 5, 1, 1))
+   model:add(nn.ReLU())
+   model:add(nn.SpatialMaxPooling(2, 2, 2, 2))
    
    model:add(nn.SpatialZeroPadding(1, 1, 1, 1))
    model:add(nn.SpatialConvolutionMM(16, 32, 4, 4, 1, 1))
