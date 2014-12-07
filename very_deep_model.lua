@@ -9,14 +9,14 @@ function very_deep_model() -- validate.lua Acc: 0.924
    -- Convolution Layers
    
    model:add(nn.Transpose({1,4},{1,3},{1,2}))
-   model:add(ccn2.SpatialConvolution(3, 16, 3, 1, 1))
+   model:add(ccn2.SpatialConvolution(3, 32, 3, 1, 1))
    model:add(nn.ReLU())
-   model:add(ccn2.SpatialConvolution(16, 16, 3, 1, 1))
+   model:add(ccn2.SpatialConvolution(32, 32, 3, 1, 1))
    model:add(nn.ReLU())
    model:add(ccn2.SpatialMaxPooling(2, 2))
    model:add(nn.Dropout(0.25))
       
-   model:add(ccn2.SpatialConvolution(16, 32, 3, 1, 1))
+   model:add(ccn2.SpatialConvolution(32, 32, 3, 1, 1))
    model:add(nn.ReLU())
    model:add(ccn2.SpatialConvolution(32, 32, 3, 1, 1))
    model:add(nn.ReLU())
