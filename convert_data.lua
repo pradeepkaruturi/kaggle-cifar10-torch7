@@ -14,10 +14,10 @@ string.split = function(str, sep)
 end
 local function label_vector(label_name)
    local vec = torch.Tensor(10):zero()
-   vec[LABEL2ID[label_name]] = 1.0
+   vec[LABEL2ID[tonumber(label_name)]] = 1.0
    return vec
 end
-local TRAIN_N = 50000
+local TRAIN_N = 4000
 local function convert_train()
    local label_file = string.format("%s/trainLabels.csv", DATA_DIR)
    local x = torch.Tensor(TRAIN_N, 3, 32, 32)
@@ -45,7 +45,7 @@ local function convert_train()
    torch.save(string.format("%s/train_x.bin", DATA_DIR), x)
    torch.save(string.format("%s/train_y.bin", DATA_DIR), y)
 end
-local TEST_N = 300000
+local TEST_N = 15000
 local function convert_test()
    local x = torch.Tensor(TEST_N, 3, 32, 32)
    local i = 1
