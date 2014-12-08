@@ -372,7 +372,7 @@ end
 -- and train!
 --
 max_epochs = 20
-for i=1, max_epochs
+for i=1, max_epochs do
    -- train/test
    train(trainData)
   
