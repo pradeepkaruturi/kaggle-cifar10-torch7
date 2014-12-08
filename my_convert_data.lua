@@ -23,7 +23,7 @@ local TRAIN_N = 4000
 local function convert_train()
    local label_file = string.format("%s/trainLabels.csv", DATA_DIR)
    local x = torch.Tensor(TRAIN_N, 3, 32, 32)
-   local y = torch.Tensor(TRAIN_N, 1)
+   local y = torch.Tensor(TRAIN_N)
    local file = io.open(label_file, "r")
    local head = true
    local line
