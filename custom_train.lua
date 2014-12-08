@@ -372,14 +372,12 @@ end
 -- and train!
 --
 max_epochs = 20
-temp = max_epoch
-repeat
+for i=1, max_epochs
    -- train/test
    train(trainData)
   
    -- plot errors
    trainLogger:style{['% mean class accuracy (train set)'] = '-'}
-   temp = temp - 1
-until temp == 0
+end
 
 test(testData)
