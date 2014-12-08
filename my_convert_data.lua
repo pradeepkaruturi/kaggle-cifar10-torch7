@@ -1,6 +1,8 @@
 require 'image'
 require './SETTINGS'
 
+torch.setdefaulttensortype('torch.DoubleTensor')
+
 string.split_it = function(str, sep)
    if str == nil then return nil end
    return string.gmatch(str, "[^\\" .. sep .. "]+")
