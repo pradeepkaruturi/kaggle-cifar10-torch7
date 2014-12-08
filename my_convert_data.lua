@@ -58,7 +58,7 @@ local function convert_test()
 	 xlua.progress(i, TEST_N)
       end
    end
-   torch.save(string.format("%s/my_test_x.bin", DATA_DIR), x)
+   torch.save(string.format("%s/my_test.bin", DATA_DIR), x)
 end
 
 print("convert train data ...")
