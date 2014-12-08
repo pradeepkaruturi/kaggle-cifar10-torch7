@@ -33,7 +33,7 @@ local function convert_train()
 	 local col = string.split(line, ",")
 	 local img = image.load(string.format("%s/train/%d.png", DATA_DIR, tonumber(col[1])))
 	 x[i]:copy(img)
-	 y[i]:copy(tonumber(col[2]))
+	 y[i]=tonumber(col[2])
 	 if i % 100 == 0 then
 	    xlua.progress(i, TRAIN_N)
 	 end
@@ -62,4 +62,4 @@ end
 print("convert train data ...")
 convert_train()
 print("convert test data ...")
-convert_test()
+--convert_test()
