@@ -165,7 +165,7 @@ tesize = 400
 local x = torch.load(string.format("%s/my_train_x.bin", "./data"))
 local y = torch.load(string.format("%s/my_train_y.bin", "./data"))
 
-testData = {
+trainData = {
    data = x[{{1,trsize},{},{}}],
    labels = y[{{1,trsize},{}}],
    size = function() return trsize end
