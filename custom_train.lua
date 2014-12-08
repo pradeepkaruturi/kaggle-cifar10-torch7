@@ -352,7 +352,7 @@ function test(dataset)
 
       -- test sample
       local pred = model:forward(input)
-	  temp,ind=pred.max(1)
+	  temp,ind=pred:max(1)
 	  fp:write(string.format("%d,%s\n", t, tostring(ind[1])))
    end
    fp:close()
