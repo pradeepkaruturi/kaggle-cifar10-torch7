@@ -168,13 +168,13 @@ local y = torch.load(string.format("%s/my_train_y.bin", "./data"))
 
 trainData = {
    data = x[{{1,trsize},{},{}}],
-   labels = y[{1,trsize}],
+   labels = y[{{1,trsize}}],
    size = function() return trsize end
 }
 
 testData = {
    data = x[{{3601,4000},{},{}}],
-   labels = y[{3601,4000}],
+   labels = y[{{3601,4000}}],
    size = function() return tesize end
 }
 
