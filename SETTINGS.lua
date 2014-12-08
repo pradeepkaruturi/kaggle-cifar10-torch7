@@ -1,7 +1,7 @@
 require 'torch'
 
 torch.setdefaulttensortype('torch.FloatTensor')
-torch.setnumthreads(4)
+torch.setnumthreads(6)
 
 DATA_DIR="./data"
 
