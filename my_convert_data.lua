@@ -33,7 +33,7 @@ local function convert_train()
 	 head = false
       else
 	 local col = string.split(line, ",")
-	 local img = image.load(string.format("%s/train/%d.png", DATA_DIR, tonumber(col[1])))
+	 local img = image.load(string.format("%s/train/%d.png", DATA_DIR, i))
 	 x[i]:copy(img)
 	 y[i]=tonumber(col[2])
 	 if i % 100 == 0 then
