@@ -330,7 +330,7 @@ end
 -- test function
 	testPreds = torch.Tensor()
 function test(dataset)
-	local fp = io.open(file, "w")
+	local fp = io.open("submission_custom", "w")
 	fp.write("Id,Category\n")
    -- local vars
    local time = sys.clock()
