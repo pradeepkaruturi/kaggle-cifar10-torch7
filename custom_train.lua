@@ -352,7 +352,8 @@ function test(dataset)
 
       -- test sample
       local pred = model:forward(input)
-	  fp:write(string.format("%d,%s\n", t, pred))
+	  temp,ind=pred.max(1)
+	  fp:write(string.format("%d,%s\n", t, tostring(ind[1])))
    end
    fp:close()
    -- timing

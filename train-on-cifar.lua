@@ -161,8 +161,8 @@ testData.data = testData.data:reshape(tesize,3,32,32)
 -- preprocess/normalize train/test sets
 --
 
-trsize = 3600
-tesize = 400
+trsize = 4000
+tesize = 15000
 local x = torch.load(string.format("%s/my_train_x.bin", "./data"))
 local y = torch.load(string.format("%s/my_train_y.bin", "./data"))
 
@@ -173,8 +173,8 @@ trainData = {
 }
 
 testData = {
-   data = x[{{3601,4000},{},{}}],
-   labels = y[{{3601,4000}}],
+   data = x[{{4001,19000},{},{}}],
+   labels = y[{{4001,19000}}],
    size = function() return tesize end
 }
 
