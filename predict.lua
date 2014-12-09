@@ -13,7 +13,7 @@ local function predict(file, model, params, test_x)
    if test_x:size(1) % BATCH_SIZE ~= 0 then
       error("expect test size % " .. BATCH_SIZE .. " == 0")
    end
-   fp:write("id,label\n")
+   fp:write("Id,Category\n")
    for i = 1, test_x:size(1), BATCH_SIZE do
       local step = 64
       if DA_SIZE == nil then
@@ -56,7 +56,7 @@ local function predict(file, model, params, test_x)
 end
 local function prediction()
    local x = torch.load(string.format("%s/test_x.bin", DATA_DIR))
-   local model = torch.load("models/very_deep_20.model"):cuda()
+   local model = torch.load("models/very_deep_drop_30.model"):cuda()
    local params = torch.load("models/preprocessing_params.bin")
 
    model:evaluate()
